@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google-site-verification" content="HoWofmErOOKMSn8dHeXvBTb5cGoEBEB1rQ7Y3CrUYgY" />
+    <link rel="canonical" href="https://lovecalchub.github.io/" />
+    <meta property="og:url" content="https://lovecalchub.github.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Love Calculator — Check Your Compatibility by Name | LoveCalcHub</title>
+    <meta name="description" content="LoveCalcHub's free love calculator matches two names and reveals a fun compatibility percentage. Same names, same result, every time. Plus honest guides on what real compatibility actually depends on. For entertainment only." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LoveCalcHub" />
+    <meta property="og:title" content="Love Calculator — Check Your Compatibility by Name | LoveCalcHub" />
+    <meta property="og:description" content="Enter two names and get a fun, deterministic compatibility percentage, plus original guides on the history of love calculators, the FLAMES game, and what real compatibility depends on." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Love Calculator | LoveCalcHub" />
+    <meta name="twitter:description" content="Two names, one fun percentage. A deterministic love calculator plus honest guides about real compatibility. For entertainment only." />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "LoveCalcHub",
+      "url": "https://lovecalchub.github.io/",
+      "alternateName": "LoveCalcHub Love Calculator",
+      "description": "A free, fun love calculator that matches two names to a deterministic compatibility percentage, with original guides on compatibility, relationships, and the history of the FLAMES game."
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <style>
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
+      * { box-sizing: border-box; }
+      :root {
+        color-scheme: light dark;
+        --bg: #fdf4f5;
+        --surface: #ffffff;
+        --surface-2: #fbe9ed;
+        --ink: #33131f;
+        --muted: #7a5563;
+        --accent: #be123c;
+        --accent-strong: #8f0e2e;
+        --accent-soft: #fbdfe6;
+        --line: #efccd4;
+        --ring-track: #f6d3db;
+        --shadow: 0 18px 45px rgba(143, 14, 46, 0.13);
+        --header-bg: rgba(255, 255, 255, 0.92);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #180b12;
+          --surface: #25111c;
+          --surface-2: #301623;
+          --ink: #fae9ee;
+          --muted: #cf9fb0;
+          --accent: #fb5e7e;
+          --accent-strong: #ff8299;
+          --accent-soft: #3d1626;
+          --line: #472233;
+          --ring-track: #452031;
+          --shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+          --header-bg: rgba(24, 11, 18, 0.92);
+        }
+      }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.7;
+      }
+      h1, h2, h3, .brand-name {
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        line-height: 1.2;
+        color: var(--ink);
+      }
+      a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      a:hover { color: var(--accent-strong); }
+      .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+      .prose { max-width: 720px; }
+
+      /* Header */
+      .site-header {
+        position: sticky; top: 0; z-index: 20;
+        background: var(--header-bg);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+      .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+      .brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; min-height: 2.25rem; }
+      .brand svg { flex: none; }
+      .brand-name { font-size: 1.45rem; font-weight: 800; letter-spacing: 0.2px; }
+      .brand-name em { font-style: normal; color: var(--accent); }
+      .main-nav { display: flex; flex-wrap: wrap; gap: 2px 4px; }
+      .main-nav a {
+        color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+        padding: 8px 11px; border-radius: 8px; display: inline-flex; align-items: center; min-height: 2.25rem;
+      }
+      .main-nav a:hover { background: var(--surface-2); color: var(--accent-strong); }
+      .main-nav a.active { color: var(--accent); background: var(--surface-2); }
+
+      /* Pages */
+      .page { display: none; }
+      .page.current { display: block; }
+      main { padding-bottom: 30px; }
+
+      /* Hero + tool */
+      .hero { text-align: center; padding: 44px 0 8px; }
+      .hero h1 { font-size: clamp(2.1rem, 6vw, 3.2rem); font-weight: 800; margin: 0 0 12px; }
+      .hero h1 .accent { color: var(--accent); }
+      .hero p.lede { max-width: 620px; margin: 0 auto; color: var(--muted); font-size: 1.1rem; }
+      .tool-panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 30px 28px 26px;
+        margin: 30px auto 10px;
+        max-width: 640px;
+      }
+      .tool-panel h2 { margin: 0 0 4px; font-size: 1.5rem; text-align: center; }
+      .tool-panel .tool-sub { text-align: center; color: var(--muted); margin: 0 0 20px; font-size: 0.98rem; }
+      .name-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: end; }
+      .field label { display: block; font-weight: 600; font-size: 0.92rem; margin-bottom: 6px; }
+      .field input {
+        width: 100%; padding: 11px 13px; font-size: 1.05rem; font-family: inherit;
+        border: 1.5px solid var(--line); border-radius: 10px;
+        background: var(--bg); color: var(--ink);
+      }
+      .field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+      .heart-join { display: flex; align-items: center; justify-content: center; padding-bottom: 4px; }
+      .calc-btn {
+        width: 100%; margin-top: 20px; padding: 13px 18px;
+        background: var(--accent); color: #fff; border: none; border-radius: 11px;
+        font-size: 1.08rem; font-weight: 700; font-family: inherit; cursor: pointer;
+        min-height: 3rem;
+      }
+      .calc-btn:hover { background: var(--accent-strong); }
+      .form-error { color: var(--accent-strong); font-weight: 600; text-align: center; margin: 12px 0 0; display: none; }
+      .fun-note { text-align: center; color: var(--muted); font-size: 0.88rem; margin: 14px 0 0; }
+
+      .result { text-align: center; padding-top: 8px; }
+      .result .pair { font-family: "Playfair Display", Georgia, serif; font-size: 1.35rem; font-weight: 700; margin: 10px 0 2px; }
+      .result .pair .amp { color: var(--accent); font-style: italic; }
+      .ring-wrap { position: relative; width: 190px; height: 190px; margin: 12px auto 4px; }
+      .ring-wrap svg { transform: rotate(-90deg); display: block; }
+      .ring-track { stroke: var(--ring-track); }
+      .ring-fill { stroke: var(--accent); transition: stroke-dashoffset 0.1s linear; }
+      .ring-num {
+        position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        font-family: "Playfair Display", Georgia, serif;
+      }
+      .ring-num .pct { font-size: 3.1rem; font-weight: 800; line-height: 1; color: var(--accent-strong); }
+      .ring-num .pct-label { font-family: "Public Sans", sans-serif; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
+      .result .band { font-size: 1.45rem; margin: 8px 0 6px; }
+      .result .band-msg { max-width: 480px; margin: 0 auto; color: var(--muted); }
+      .result .again-btn {
+        margin-top: 18px; padding: 10px 20px; background: transparent; color: var(--accent);
+        border: 1.5px solid var(--accent); border-radius: 10px; font-weight: 700; font-family: inherit;
+        font-size: 1rem; cursor: pointer; min-height: 2.75rem;
+      }
+      .result .again-btn:hover { background: var(--accent-soft); }
+
+      /* Prose sections */
+      section.block { padding: 34px 0 6px; }
+      section.block h2 { font-size: 1.85rem; margin: 0 0 14px; }
+      section.block h3 { font-size: 1.3rem; margin: 26px 0 8px; }
+      section.block p { margin: 0 0 15px; }
+      .divider { border: none; border-top: 1px solid var(--line); margin: 38px 0 0; }
+      .guide-list { list-style: none; padding: 0; margin: 6px 0 0; }
+      .guide-list li { padding: 15px 0; border-bottom: 1px solid var(--line); }
+      .guide-list li:last-child { border-bottom: none; }
+      .guide-list a { font-family: "Playfair Display", Georgia, serif; font-size: 1.22rem; font-weight: 700; text-decoration: none; }
+      .guide-list a:hover { text-decoration: underline; }
+      .guide-list p { margin: 4px 0 0; color: var(--muted); font-size: 0.98rem; }
+      .disclaimer-box {
+        background: var(--surface-2); border-radius: 12px; padding: 18px 20px; margin: 30px 0 4px;
+        font-size: 0.97rem;
+      }
+      .disclaimer-box strong { color: var(--accent-strong); }
+
+      /* Article pages */
+      .article-head { padding: 40px 0 4px; }
+      .article-head h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); margin: 0 0 10px; }
+      .article-head .standfirst { color: var(--muted); font-size: 1.1rem; margin: 0; }
+      .article-body h2 { font-size: 1.6rem; margin: 32px 0 10px; }
+      .article-body h3 { font-size: 1.22rem; margin: 24px 0 6px; }
+      .article-body p { margin: 0 0 15px; }
+      .article-body ul, .article-body ol { margin: 0 0 16px; padding-left: 24px; }
+      .article-body li { margin-bottom: 8px; }
+      .back-link { display: inline-flex; align-items: center; min-height: 2.25rem; font-weight: 600; }
+      .next-read { border-top: 1px solid var(--line); margin-top: 36px; padding-top: 20px; }
+      .next-read p { margin: 0 0 8px; color: var(--muted); font-size: 0.95rem; }
+
+      /* FLAMES mini tool */
+      .flames-tool {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+        padding: 22px; margin: 22px 0;
+      }
+      .flames-tool h3 { margin-top: 0; }
+      .flames-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .flames-tool button {
+        margin-top: 14px; padding: 11px 18px; background: var(--accent); color: #fff; border: none;
+        border-radius: 10px; font-weight: 700; font-family: inherit; font-size: 1rem; cursor: pointer; min-height: 2.75rem;
+      }
+      .flames-tool button:hover { background: var(--accent-strong); }
+      .flames-result { margin-top: 14px; font-size: 1.05rem; display: none; }
+      .flames-result .flames-word { font-family: "Playfair Display", Georgia, serif; font-size: 1.5rem; font-weight: 800; color: var(--accent-strong); }
+
+      /* FAQ */
+      .faq-item { border-bottom: 1px solid var(--line); padding: 16px 0; }
+      .faq-item h3 { margin: 0 0 6px; font-size: 1.18rem; }
+      .faq-item p { margin: 0; color: var(--ink); }
+
+      /* Flag lists */
+      .flag-list { list-style: none; padding: 0; margin: 0 0 18px; }
+      .flag-list li { padding: 10px 0 10px 30px; position: relative; border-bottom: 1px solid var(--line); }
+      .flag-list li:last-child { border-bottom: none; }
+      .flag-list li::before { position: absolute; left: 2px; top: 10px; font-weight: 800; }
+      .flag-list.red li::before { content: "✕"; color: var(--accent); }
+      .flag-list.green li::before { content: "✓"; color: #1d7a4f; }
+      @media (prefers-color-scheme: dark) { .flag-list.green li::before { color: #4cc38a; } }
+
+      /* Footer */
+      .site-footer { border-top: 1px solid var(--line); margin-top: 46px; padding: 30px 0 40px; background: var(--surface); }
+      .footer-grid { display: flex; flex-wrap: wrap; gap: 26px 48px; }
+      .footer-grid h3 { font-size: 1.05rem; margin: 0 0 10px; }
+      .footer-grid ul { list-style: none; margin: 0; padding: 0; }
+      .footer-grid li { margin-bottom: 4px; }
+      .footer-grid a { color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; min-height: 2rem; }
+      .footer-grid a:hover { color: var(--accent); text-decoration: underline; }
+      .footer-note { color: var(--muted); font-size: 0.9rem; margin-top: 24px; max-width: 720px; }
+
+      @media (max-width: 560px) {
+        .name-row { grid-template-columns: 1fr; }
+        .heart-join { padding: 0; }
+        .flames-row { grid-template-columns: 1fr; }
+        .tool-panel { padding: 24px 18px 20px; }
+        .header-inner { justify-content: center; text-align: center; }
+        .main-nav { justify-content: center; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .ring-fill { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#/" aria-label="LoveCalcHub home">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.3C.4 8.6 2.3 5 5.7 5c2 0 3.4 1.1 4.3 2.4h4c.9-1.3 2.3-2.4 4.3-2.4 3.4 0 5.3 3.6 3.7 6.7C19.5 16.1 12 21 12 21Z" fill="#be123c" opacity="0.18"/><path d="M12 20.2S5.2 15.7 3 11.9C1.7 9.6 3.1 6.5 5.9 6.5c1.7 0 3 1 3.9 2.3.3.5.9.5 1.2 0 .9-1.3 2.2-2.3 3.9-2.3 2.8 0 4.2 3.1 2.9 5.4-2.2 3.8-9 8.3-9 8.3Z" fill="#be123c"/></svg>
+          <span class="brand-name">Love<em>Calc</em>Hub</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#/" data-nav="home">Calculator</a>
+          <a href="#/history-of-love-calculators" data-nav="guides">Guides</a>
+          <a href="#/about" data-nav="about">About</a>
+          <a href="#/faq" data-nav="faq">FAQ</a>
+          <a href="#/contact" data-nav="contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <!-- ============================= HOME ============================= -->
+      <div class="page" id="page-home" data-route="">
+        <div class="hero">
+          <h1>The Love <span class="accent">Calculator</span></h1>
+          <p class="lede">Type in two names and discover your compatibility percentage. It takes five seconds, the same two names always give the same result — and yes, it is purely for fun.</p>
+        </div>
+
+        <div class="tool-panel">
+          <h2>Calculate Your Match</h2>
+          <p class="tool-sub">Enter both names exactly as you like — spelling counts.</p>
+          <form id="calc-form" novalidate>
+            <div class="name-row">
+              <div class="field">
+                <label for="name1">Your name</label>
+                <input type="text" id="name1" name="name1" placeholder="e.g. Alex" autocomplete="off" maxlength="40" />
+              </div>
+              <div class="heart-join" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 24 24"><path d="M12 20.2S5.2 15.7 3 11.9C1.7 9.6 3.1 6.5 5.9 6.5c1.7 0 3 1 3.9 2.3.3.5.9.5 1.2 0 .9-1.3 2.2-2.3 3.9-2.3 2.8 0 4.2 3.1 2.9 5.4-2.2 3.8-9 8.3-9 8.3Z" fill="#be123c"/></svg>
+              </div>
+              <div class="field">
+                <label for="name2">Their name</label>
+                <input type="text" id="name2" name="name2" placeholder="e.g. Sam" autocomplete="off" maxlength="40" />
+              </div>
+            </div>
+            <button type="submit" class="calc-btn">Calculate Compatibility</button>
+            <p class="form-error" id="form-error">Please enter both names so we can work out your match.</p>
+          </form>
+
+          <div class="result" id="result" hidden aria-live="polite">
+            <p class="pair"><span id="res-name1"></span> <span class="amp">&amp;</span> <span id="res-name2"></span></p>
+            <div class="ring-wrap">
+              <svg width="190" height="190" viewBox="0 0 190 190" aria-hidden="true">
+                <circle class="ring-track" cx="95" cy="95" r="82" fill="none" stroke-width="13" />
+                <circle class="ring-fill" id="ring-fill" cx="95" cy="95" r="82" fill="none" stroke-width="13" stroke-linecap="round" stroke-dasharray="515.2" stroke-dashoffset="515.2" />
+              </svg>
+              <div class="ring-num">
+                <span class="pct"><span id="pct-num">0</span>%</span>
+                <span class="pct-label">Compatibility</span>
+              </div>
+            </div>
+            <h3 class="band" id="res-band"></h3>
+            <p class="band-msg" id="res-msg"></p>
+            <button type="button" class="again-btn" id="again-btn">Try another pair</button>
+          </div>
+
+          <p class="fun-note">For entertainment only. A name match is a game, not a prediction — real compatibility is built, not calculated. Names are processed in your browser and never leave your device.</p>
+        </div>
+
+        <section class="block prose">
+          <h2>A game older than the internet</h2>
+          <p>Long before anyone had a phone in their pocket, sweethearts were already trying to calculate their chances. Schoolchildren counted off the letters of two names against the word FLAMES to learn whether they were destined to be Friends, Lovers, or Married. Teenagers folded paper fortune tellers, counted petals on daisies — "he loves me, he loves me not" — and compared star signs in the back pages of magazines. The love calculator is simply the digital descendant of all of those rituals, and it carries the same appeal: a tiny, playful answer to the biggest question there is.</p>
+          <p>The first love calculators appeared on the early web in the 1990s, when a single text box and a percentage were enough to keep people refreshing for hours. They spread because they were social — you never tested just your own name. You tested your best friend and her crush, your favourite film couple, your teacher and the teacher from the next classroom. If you would like the full story, from counting games on paper to the apps of today, read our guide to <a href="#/history-of-love-calculators">the history of the love calculator and the FLAMES game</a>.</p>
+          <p>What makes our calculator a little different is that it is honest about its own trick. Many love calculator sites quietly randomise their answers, so the same couple can score 34% in the morning and 91% after lunch. Ours is deterministic: the two names are turned into a number by a fixed formula, so the same pair of names always produces the same percentage, on any day, on any device. You can read exactly how that works — and why other sites give different answers — in <a href="#/how-love-calculators-work">how love calculators work (and why results differ)</a>.</p>
+        </section>
+
+        <hr class="divider" />
+
+        <section class="block prose">
+          <h2>Why we can't resist a percentage</h2>
+          <p>There is something deeply satisfying about a number. Feelings are vague, contradictory, and hard to say out loud; a percentage is clean and certain, even when we know perfectly well it is made up. Psychologists call part of this the Barnum effect: we happily accept vague, flattering statements as if they were written personally for us, which is why horoscopes, personality quizzes, and compatibility scores all feel oddly accurate. A love calculator gives you a 78% and your brain immediately starts finding the evidence to agree with it.</p>
+          <p>There is also a social reason. Asking someone "do you think we would be good together?" is terrifying. Showing them a screenshot that says 92% is a joke — mostly. The calculator says the risky thing so you do not have to, and both of you can laugh about it while quietly noticing how the other person reacts. That little moment of shared laughter is genuinely worth something, even if the number behind it is not.</p>
+          <p>And sometimes the result simply confirms what we already feel. A high score for a couple who adore each other is a small celebration. A low score for a pair who were never serious is a harmless shrug. The number is a mirror for the mood you brought to it — which is precisely why it should never be treated as a verdict. If a playful score ever leaves you wondering about the real thing, our guide on <a href="#/what-makes-two-people-compatible">what actually makes two people compatible</a> looks at the factors that genuinely matter.</p>
+        </section>
+
+        <hr class="divider" />
+
+        <section class="block prose">
+          <h2>What real compatibility actually depends on</h2>
+          <p>Here is the honest part, and we would rather say it plainly than hide it in small print: no arrangement of letters in two names has any power over a relationship. Researchers who study couples that stay happy for decades keep finding the same unglamorous ingredients, and none of them is a percentage.</p>
+          <h3>Communication, especially during conflict</h3>
+          <p>Every couple disagrees. What separates the couples who thrive is not the absence of arguments but how the arguments go — whether both people can raise a problem without contempt, listen without immediately defending, and repair things afterwards with humour or an apology. A couple that can fight kindly can survive almost anything; a couple that cannot will be worn down by almost everything.</p>
+          <h3>Shared values, not shared hobbies</h3>
+          <p>Liking the same films is pleasant but shallow. What predicts long-term ease is agreement on the deep stuff: how money should be handled, whether and how to raise children, how much time goes to extended family, what honesty means, and how you both want an ordinary Tuesday to feel. Two people can have nothing in common on a playlist and everything in common on the questions that shape a life. Our list of <a href="#/21-questions-before-you-commit">21 questions to ask before you commit</a> is built around exactly those questions.</p>
+          <h3>Effort, repeated daily</h3>
+          <p>Compatibility is less like a lock and key and more like a garden: the starting conditions help, but the outcome mostly depends on tending. Couples who stay close keep doing small things on purpose — asking real questions, expressing appreciation, showing up during boring and difficult weeks alike. Effort is the one factor entirely within your control, which makes it the most hopeful one too.</p>
+          <p>Learning to spot the early signs matters as well. Some behaviours in a new relationship quietly predict trouble, and some quietly predict safety. We have laid them side by side in <a href="#/red-flags-vs-green-flags">red flags vs green flags in a new relationship</a> — worth a read before any calculator result, high or low, starts feeling meaningful.</p>
+        </section>
+
+        <hr class="divider" />
+
+        <section class="block">
+          <h2>Guides &amp; articles</h2>
+          <ul class="guide-list">
+            <li>
+              <a href="#/history-of-love-calculators">The History of the Love Calculator (and the FLAMES Game)</a>
+              <p>From daisy petals and folded paper to the first websites — how a playground counting game became an internet ritual, with a playable FLAMES game included.</p>
+            </li>
+            <li>
+              <a href="#/how-love-calculators-work">How Love Calculators Work (And Why Results Differ)</a>
+              <p>Hashing, letter values, random numbers and seeded formulas — the simple machinery behind the percentage, and why two sites rarely agree.</p>
+            </li>
+            <li>
+              <a href="#/what-makes-two-people-compatible">What Actually Makes Two People Compatible?</a>
+              <p>Beyond the percentage: communication, values, attraction, timing and effort — the factors research keeps pointing to, explained honestly.</p>
+            </li>
+            <li>
+              <a href="#/21-questions-before-you-commit">21 Questions to Ask Before You Commit</a>
+              <p>Money, family, conflict, children, faith, ambition and ordinary Tuesdays — the conversations that tell you more than any score ever could.</p>
+            </li>
+            <li>
+              <a href="#/red-flags-vs-green-flags">Red Flags vs Green Flags in a New Relationship</a>
+              <p>The warning signs worth taking seriously, the reassuring signs worth appreciating, and how to tell a genuine flag from a normal human flaw.</p>
+            </li>
+          </ul>
+        </section>
+
+        <div class="disclaimer-box">
+          <strong>A quick, honest note:</strong> LoveCalcHub is an entertainment site. The calculator turns names into a number using a fixed mathematical formula; it cannot measure feelings, predict a future, or judge a relationship. Treat your score the way you would treat a fortune cookie — enjoy it, share it, and never make a real decision because of it. Questions? Visit our <a href="#/faq">FAQ</a> or read more <a href="#/about">about LoveCalcHub</a>.
+        </div>
+      </div>
+
+      <!-- ============================= ARTICLE 1: HISTORY ============================= -->
+      <div class="page" id="page-history" data-route="history-of-love-calculators">
+        <div class="article-head prose">
+          <h1>The History of the Love Calculator (and the FLAMES Game)</h1>
+          <p class="standfirst">Before there were apps, there were daisies, folded paper, and a six-letter word that decided your romantic fate in playgrounds across the world.</p>
+        </div>
+        <div class="article-body prose">
+          <p>Every generation finds its own way to ask the same nervous question: <em>do we stand a chance?</em> Long before software existed, people turned the question into games — partly for fun, partly because a game feels safer than asking directly. The love calculator you just used on our <a href="#/">homepage</a> is only the latest version of a ritual that is centuries old.</p>
+
+          <h2>Petals, apples and other early oracles</h2>
+          <p>The most famous early love test is also the simplest: plucking the petals of a daisy one by one while alternating "he loves me" and "he loves me not," with the final petal delivering the verdict. The game is documented in Europe from at least the early nineteenth century and was popular enough to appear in Goethe's <em>Faust</em>, where Margaret tears at a flower while wondering about Faust's feelings. Nobody believed the flower truly knew — but the flutter of suspense on the last petal was real, and that suspense is the whole point.</p>
+          <p>Other traditions worked the same way. Apple pips were named after suitors and pressed to the forehead to see which would stick longest. Apple peel, pared in one long strip and thrown over the shoulder, was supposed to land in the shape of a future partner's initial. These were parlour games and harvest-festival amusements: low-stakes ways to talk about attraction in eras when talking about it openly was difficult. The game gave everyone permission to speculate, tease, and confess — with plausible deniability.</p>
+
+          <h2>The FLAMES game</h2>
+          <p>The direct ancestor of the modern love calculator is FLAMES, a pencil-and-paper game that spread through schools in South Asia and far beyond during the twentieth century, carried from classroom to classroom by word of mouth. The letters stand for six possible destinies: <strong>F</strong>riends, <strong>L</strong>ove, <strong>A</strong>ffection, <strong>M</strong>arriage, <strong>E</strong>nemies, and <strong>S</strong>iblings.</p>
+          <p>Here is how it works. Write both names down. Cross out the letters the two names share — if both names contain an "a," one "a" disappears from each. Count the letters that remain. Then count through the letters of FLAMES over and over, striking out the letter you land on each time your count runs out, until only one letter survives. That letter is your "result." A whole afternoon of playground drama could hinge on whether the counting ended on M or E.</p>
+          <p>FLAMES matters in this history because it is a true algorithm: fixed inputs, fixed steps, a fixed result. Two people anywhere in the world, given the same two names, will always reach the same letter. That determinism is exactly what made it feel authoritative to a ten-year-old — it was not an opinion, it was <em>maths</em>. You can try it yourself right here:</p>
+
+          <div class="flames-tool">
+            <h3>Play FLAMES</h3>
+            <div class="flames-row">
+              <div class="field">
+                <label for="flames-name1">First name</label>
+                <input type="text" id="flames-name1" placeholder="e.g. Priya" autocomplete="off" maxlength="40" />
+              </div>
+              <div class="field">
+                <label for="flames-name2">Second name</label>
+                <input type="text" id="flames-name2" placeholder="e.g. Arjun" autocomplete="off" maxlength="40" />
+              </div>
+            </div>
+            <button type="button" id="flames-btn">Reveal our FLAMES result</button>
+            <p class="flames-result" id="flames-result"></p>
+          </div>
+
+          <p>Notice what the game does well. It takes an unbearably vague question — <em>what are we?</em> — and returns a single, concrete, shareable answer. It is wrong in the way all such games are wrong, but it is wonderfully designed as entertainment: quick, repeatable, slightly dramatic, and just plausible enough in structure to argue about.</p>
+
+          <h2>Paper fortune tellers and magazine quizzes</h2>
+          <p>The mid-twentieth century added new formats. The folded-paper fortune teller — sometimes called a cootie catcher — let children "calculate" fates by counting letters and lifting flaps. Teen magazines turned compatibility into quizzes: answer ten questions, add up your points, and learn whether you and your crush were "soulmates" or "better as friends." Astrology columns did similar work with star signs, assigning compatibility scores between signs that readers checked with total seriousness and total deniability at the same time.</p>
+          <p>These formats shared a formula that the internet would later inherit: a few simple inputs, a bit of arithmetic or counting, and an output expressed with total confidence. The confidence was always theatre. But the theatre worked, because the real product was never the answer — it was the conversation the answer started.</p>
+
+          <h2>The internet era</h2>
+          <p>When the web arrived in the 1990s, the love calculator was one of the first entertainments to move online. It needed no graphics, no accounts, and no explanation: two text boxes, a button, a percentage. Early versions were simple novelties passed around by email and linked on personal homepages. Through the 2000s they multiplied into entire websites, added birth dates, star signs and "love meters," and became a standard feature of entertainment portals.</p>
+          <p>The smartphone era polished the format rather than changing it. Modern calculators animate the percentage, offer shareable result images, and suggest matches between celebrities or fictional characters. Underneath the gloss, though, the machinery is the same machinery FLAMES used: names in, arithmetic in the middle, a confident-sounding answer out. We explain the main techniques — including the fixed formula our own calculator uses — in <a href="#/how-love-calculators-work">how love calculators work (and why results differ)</a>.</p>
+
+          <h2>Why the game refuses to die</h2>
+          <p>It would be easy to dismiss all of this as silliness, but the persistence of the love calculator across centuries and technologies suggests it fills a real niche. It lets people rehearse feelings at a safe distance. It turns private hopes into shared jokes. It gives friends a ritual to perform together and gives shy people a script for raising a subject they could never raise directly. The daisy, the folded paper, the FLAMES letters and the glowing percentage are all the same tool wearing different clothes.</p>
+          <p>What has changed is our honesty about it. The fortune tellers of earlier centuries were sometimes consulted in genuine earnest. Today, nearly everyone who types two names into a calculator knows it is a game — and enjoys it <em>because</em> it is a game, the way you enjoy a magic trick more once you stop expecting real magic. We built LoveCalcHub in that spirit: a faithful, well-made version of an old amusement, clearly labelled as entertainment, sitting alongside honest writing about <a href="#/what-makes-two-people-compatible">what compatibility between two people really involves</a>.</p>
+          <p>So pluck the digital daisy. Just remember which parts of love were never going to fit inside a flower — or a percentage.</p>
+
+          <div class="next-read">
+            <p>Keep reading</p>
+            <a href="#/how-love-calculators-work">How Love Calculators Work (And Why Results Differ)</a><br />
+            <a href="#/">Back to the love calculator</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================= ARTICLE 2: HOW IT WORKS ============================= -->
+      <div class="page" id="page-how" data-route="how-love-calculators-work">
+        <div class="article-head prose">
+          <h1>How Love Calculators Work (And Why Results Differ)</h1>
+          <p class="standfirst">There is no mystery inside a love calculator — just a few lines of simple maths. Understanding the trick makes the game more fun, not less.</p>
+        </div>
+        <div class="article-body prose">
+          <p>Type two names into ten different love calculators and you may well receive ten different percentages. That is not because nine of them are broken. It is because there is no single "correct" formula hiding behind the curtain — every calculator invents its own, and the invention is the whole product. Here are the main techniques these sites use, including the one behind <a href="#/">our own calculator</a>.</p>
+
+          <h2>Method 1: Pure randomness</h2>
+          <p>The laziest calculators simply generate a random number between 0 and 100 each time you press the button. The names you typed are decoration. You can spot these instantly: test the same pair twice and watch the score change. Some random calculators are slightly more sophisticated and bias the result — always landing between, say, 40 and 95 — because extremely low scores feel bad and discourage sharing. If a site gives you a different answer every visit, you are looking at a dice roll with a heart on it.</p>
+
+          <h2>Method 2: Letter values</h2>
+          <p>A step up in craftsmanship is the letter-value method, borrowed from old numerology games. Each letter is assigned a number — a = 1, b = 2, and so on, or values from a mystical-looking table. The calculator adds up the letters of both names, combines the totals with some arithmetic, and squeezes the result into a 0–100 range. This method is deterministic: the same names always produce the same score. It also explains some quirks — a nickname can score completely differently from a full name, because the letters are different even though the person is not.</p>
+
+          <h2>Method 3: Hashing — the method we use</h2>
+          <p>Modern calculators often use a technique borrowed from computer science called hashing. A hash function takes any text and scrambles it into a number in a way that looks random but is perfectly repeatable: feed it the same text and you get the same number, every time, forever. It is the same basic idea computers use to check that files have not been tampered with.</p>
+          <p>Here is exactly what LoveCalcHub does. We tidy both names (trimming spaces and ignoring capitalisation), put them in alphabetical order so that "Alex and Sam" and "Sam and Alex" are treated identically, join them into one string, and run that string through a hash function. The resulting number is divided into the 0–100 range to give your percentage, and it also selects which of our result messages you see — which is why the same pair always reads the same message, too.</p>
+          <p>Hashing has a property worth knowing about: it is deliberately chaotic. Change one letter — add a middle name, use a nickname, fix a typo — and the output number jumps completely. That is why "Kate" and "Katie" can produce wildly different scores with the same partner. It is not that the calculator detected a subtle truth about the nickname. It is that the scramble changed. Any calculator that uses names alone will have this property, whatever method it uses, because names carry no information about a relationship for a formula to detect in the first place.</p>
+
+          <h2>Method 4: Extra ingredients</h2>
+          <p>Some calculators ask for more than names: birth dates, star signs, blood types, favourite colours. These extra inputs feed astrology tables, numerology charts, or simply more hashing. They make the ritual feel more personal and the result more "considered," and they give the site more pages to show you. But adding inputs does not add accuracy — a formula combining your star sign and your name is exactly as predictive as one using your name alone, which is to say, not predictive at all. It is seasoning, not substance.</p>
+
+          <h2>So why do results differ between sites?</h2>
+          <p>Now the answer should be clear. Each site chooses its own method, its own letter values or hash function, its own way of squeezing numbers into a percentage, and its own biases about which scores feel good to receive. There is no shared standard to agree with, because there is nothing real being measured. Two thermometers disagree because one is faulty; two love calculators disagree because neither is a thermometer. They are music boxes playing different tunes.</p>
+          <p>There is one more difference that matters: honesty about randomness. A deterministic calculator like ours will at least give you a stable result you can share and laugh about consistently. A random one will happily tell you 96% today and 23% tomorrow, and if you happened to test it on a fragile day, that second number could sting for no reason at all. We think a game should be a game all the way down — fixed rules, no fake drama.</p>
+
+          <h2>How to enjoy a love calculator properly</h2>
+          <p>Use it as a conversation starter, a party game, a silly screenshot to send someone. Test fictional couples. Test yourself against pizza. Just do not let it anywhere near a real decision: not whether to call, not whether to stay, not whether someone is "right" for you. For the questions that actually matter, we recommend the slower, less magical route — the conversations in <a href="#/21-questions-before-you-commit">21 questions to ask before you commit</a> and the honest evidence in <a href="#/what-makes-two-people-compatible">what actually makes two people compatible</a>. A percentage can start a conversation. Only the conversation can tell you anything true.</p>
+
+          <div class="next-read">
+            <p>Keep reading</p>
+            <a href="#/history-of-love-calculators">The History of the Love Calculator (and the FLAMES Game)</a><br />
+            <a href="#/">Back to the love calculator</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================= ARTICLE 3: COMPATIBILITY ============================= -->
+      <div class="page" id="page-compatibility" data-route="what-makes-two-people-compatible">
+        <div class="article-head prose">
+          <h1>What Actually Makes Two People Compatible?</h1>
+          <p class="standfirst">Not a percentage, not a star sign, and not a shared taste in films. The real ingredients of compatibility are slower, plainer — and much more within your control.</p>
+        </div>
+        <div class="article-body prose">
+          <p>"Compatibility" is one of those words everyone uses and few people define. It gets treated like a property two people either have or lack, as if it could be measured in advance — by a quiz, a chart, or a <a href="#/">love calculator</a>. In reality, compatibility is better understood as a set of separate questions, each with its own answer. Two people can be wonderfully compatible in one area and badly mismatched in another, and the overall relationship depends on which areas those are.</p>
+
+          <h2>1. How you handle conflict</h2>
+          <p>If researchers who study long-term couples had to pick one factor, most would start here. Every couple disagrees — about money, time, family, chores, and a hundred small things. What distinguishes couples who stay happy is rarely the topic of their arguments; it is the manner. Relationships suffer when conflict involves contempt (mockery, eye-rolling, disgust), stonewalling (shutting down and refusing to engage), or criticism aimed at character rather than behaviour. They thrive when both people can raise a problem plainly, hear an answer they dislike without retaliating, and repair the rupture afterwards — with an apology, a joke, or a cup of tea.</p>
+          <p>The encouraging part is that conflict style is a skill, not a fate. Two people who argue badly can learn to argue well. Two people who "never fight" are not automatically compatible either; sometimes it means one person has simply stopped saying true things.</p>
+
+          <h2>2. Shared values on the big questions</h2>
+          <p>Attraction brings people together; values decide whether daily life together is easy or exhausting. The values that matter most are the ones that shape ordinary decisions: how money is earned, saved and spent; whether to have children and how to raise them; the role of extended family; honesty and fidelity; faith or its absence; how much ambition should cost the rest of life. You do not need identical opinions on everything, but you need compatible answers — or a genuine, tested ability to compromise — on the questions that will recur every week for decades.</p>
+          <p>This is why our list of <a href="#/21-questions-before-you-commit">21 questions to ask before you commit</a> focuses on these topics rather than on romance. A couple can disagree about holidays forever and be fine. A couple that disagrees about whether to have children has a problem no amount of chemistry will dissolve.</p>
+
+          <h2>3. Emotional responsiveness</h2>
+          <p>Underneath most relationship research sits a simple finding: people need to feel that their partner notices them, understands them, and responds when it matters. Psychologists call the small invitations we make for connection "bids" — a comment, a touch, a "look at this." Partners who habitually turn toward those bids, even in small ways, build up trust that carries them through hard periods. Partners who habitually miss or dismiss them slowly starve the relationship, often without any single dramatic failure.</p>
+
+          <h2>4. Attraction and affection — necessary, not sufficient</h2>
+          <p>Physical attraction matters, and pretending otherwise helps no one. But attraction is the most volatile ingredient on this list: it fluctuates with stress, health, familiarity and time. Couples who build their relationship only on intensity tend to panic when intensity does what it naturally does and settles into something calmer. Couples who treat affection — warmth, touch, admiration, desire maintained on purpose — as a practice rather than a weather pattern tend to keep more of it.</p>
+
+          <h2>5. Timing and life stage</h2>
+          <p>Two people can be right for each other and wrong for each other's calendars. One partner ready to settle while the other is mid-degree, mid-move, or mid-reinvention is a genuine compatibility problem that has nothing to do with character. Timing mismatches are among the most painful because nobody is at fault. They are also a reminder that compatibility is partly about circumstances, not just about the two people in isolation.</p>
+
+          <h2>6. Effort and goodwill</h2>
+          <p>Finally, the ingredient that quietly outweighs the rest: both people continuing to try. Compatibility is partly discovered and partly manufactured. Couples create it by adjusting habits, learning each other's sensitivities, keeping promises in small things, and assuming good intent during misunderstandings. A useful rule of thumb: initial compatibility decides how easy the first year is; effort decides how good the tenth year is.</p>
+
+          <h2>So can compatibility be calculated?</h2>
+          <p>You can now see why a name-based percentage — including ours — cannot touch any of this. None of the six factors above lives inside the spelling of two names. That is not a flaw in our calculator; it is the nature of the game, and it has been since the days of the FLAMES counting game we describe in <a href="#/history-of-love-calculators">the history of the love calculator</a>. The score is a spark for conversation. The compatibility is the conversation — and everything you both do after it.</p>
+
+          <div class="next-read">
+            <p>Keep reading</p>
+            <a href="#/21-questions-before-you-commit">21 Questions to Ask Before You Commit</a><br />
+            <a href="#/red-flags-vs-green-flags">Red Flags vs Green Flags in a New Relationship</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================= ARTICLE 4: 21 QUESTIONS ============================= -->
+      <div class="page" id="page-questions" data-route="21-questions-before-you-commit">
+        <div class="article-head prose">
+          <h1>21 Questions to Ask Before You Commit</h1>
+          <p class="standfirst">A love calculator takes five seconds. These twenty-one conversations take longer — and they are the closest thing to a real compatibility test that exists.</p>
+        </div>
+        <div class="article-body prose">
+          <p>Nobody falls in love by questionnaire, and this list is not a pass-or-fail exam. It is a map of the conversations that couples who commit wisely tend to have — usually gradually, often awkwardly, and almost always more revealingly than they expected. You do not need to schedule all twenty-one for next Tuesday. But if you are considering building a life with someone, each of these deserves an honest airing at some point, because each one touches a part of life you will actually share. If any answer surprises you, that is not a failure of the relationship — it is the list doing its job. Compare it with our overview of <a href="#/what-makes-two-people-compatible">what makes two people compatible</a> to see why these topics, specifically, are the ones that matter.</p>
+
+          <h2>Money</h2>
+          <h3>1. How do you actually handle money day to day?</h3>
+          <p>Saver or spender, planner or improviser? Neither style is wrong, but you need to know which one you are joining your life to — and whether the two styles can share a bank account without resentment.</p>
+          <h3>2. What debts and financial obligations do you have?</h3>
+          <p>Not a credit check — a honesty check. Loans, support payments, family obligations. The amount matters less than whether it is spoken aloud before commitment rather than discovered after.</p>
+          <h3>3. What does "enough" look like to you?</h3>
+          <p>One person's comfortable is another person's barely surviving. If your definitions of a good life differ wildly in cost, you will argue about money even when there is plenty of it.</p>
+
+          <h2>Family and children</h2>
+          <h3>4. Do you want children — and what if it doesn't happen, or happens unexpectedly?</h3>
+          <p>This is the least compromisable question on the list. "Maybe someday" and "definitely never" are not the same answer, and both people deserve to know which one they are building on.</p>
+          <h3>5. How would we raise them?</h3>
+          <p>Discipline, schooling, religion, screens, grandparents' involvement. You will not agree on everything, but the broad shape should be compatible.</p>
+          <h3>6. How close are we going to live to our families — emotionally and geographically?</h3>
+          <p>How often will parents visit, stay, advise, and be cared for in old age? Many couples discover too late that they married into very different expectations here.</p>
+
+          <h2>Conflict and communication</h2>
+          <h3>7. When we disagree, what do you need from me?</h3>
+          <p>Some people need to talk immediately; others need an hour alone first. Both are fine — as long as each of you knows the other's pattern and neither mistakes it for rejection.</p>
+          <h3>8. What should we never do during an argument?</h3>
+          <p>Agree on the boundaries while calm: no shouting, no threats of leaving, no bringing up old wounds as ammunition. Rules made in peace hold better in war.</p>
+          <h3>9. How do you apologise — and how do you forgive?</h3>
+          <p>Watch for the ability to say "I was wrong about that specific thing" without collapsing or counterattacking. It predicts more about your future than almost any romantic gesture.</p>
+
+          <h2>Life together</h2>
+          <h3>10. How much time together, and how much apart, feels right?</h3>
+          <p>One partner's perfect weekend is the other's loneliness, or the other's suffocation. Neither is needy or cold — they are just calibrated differently, and calibration can be negotiated only if it is named.</p>
+          <h3>11. How do we split the invisible work?</h3>
+          <p>Cooking, cleaning, bills, remembering birthdays, booking the dentist. Resentment in long relationships grows from unspoken assumptions here more than from almost anywhere else.</p>
+          <h3>12. Where do you want to live, and how settled is that?</h3>
+          <p>City or countryside, home country or abroad, near family or far. A person who dreams of emigrating and a person who cannot imagine leaving their street have a real problem to solve together.</p>
+          <h3>13. What does an ordinary good day look like for you?</h3>
+          <p>Most of a shared life is ordinary days. If your ordinary days genuinely please each other — similar rhythms, similar pleasures — the foundation is stronger than any shared love of adventure.</p>
+
+          <h2>Values and character</h2>
+          <h3>14. What does honesty require of us?</h3>
+          <p>Where is your line between privacy and secrecy? Would you tell me something I would rather not hear? Couples differ here more than they expect, and the difference matters.</p>
+          <h3>15. What role does faith or spirituality play in your life?</h3>
+          <p>Whether the answer is "central," "cultural," or "none," it will shape holidays, weddings, funerals, and possibly children. Respect matters more than agreement, but respect must be real.</p>
+          <h3>16. What are you ambitious for — and what would you sacrifice for it?</h3>
+          <p>Career, craft, status, freedom, family time. If one of you would move continents for work and the other would not move streets, better to learn it now.</p>
+          <h3>17. How do you behave when life goes wrong?</h3>
+          <p>Illness, job loss, a parent dying, money trouble. You cannot fully know until it happens, but past behaviour under stress is the best evidence you will ever get.</p>
+
+          <h2>The future and the hard cases</h2>
+          <h3>18. What would count as a betrayal for you?</h3>
+          <p>Define fidelity together, including the grey zones of messaging, friendships, and emotional intimacy. Most "sudden" betrayals were preceded by two different definitions never compared.</p>
+          <h3>19. If we hit a serious rough patch, would you try counselling?</h3>
+          <p>Ask now, while it is hypothetical. A partner who refuses all outside help in principle is telling you something important about how problems will be handled.</p>
+          <h3>20. What do you want our life to look like in ten years?</h3>
+          <p>Not a plan — a picture. Compare the pictures. If they rhyme, you have something sturdy. If they clash on essentials, love alone will spend a decade trying to edit them.</p>
+          <h3>21. Is there anything you are afraid to tell me?</h3>
+          <p>Ask it kindly, and be ready to answer it yourself. The question itself builds the thing it asks about: a relationship where hard truths can be spoken. That, more than any percentage, is what commitment actually is.</p>
+
+          <p>Twenty-one conversations will not guarantee a happy ending — nothing can. But they will replace guessing with knowing, which is the entire difference between a gamble and a decision. And if you would like an early-warning system for the dating stage before these questions even apply, read <a href="#/red-flags-vs-green-flags">red flags vs green flags in a new relationship</a>.</p>
+
+          <div class="next-read">
+            <p>Keep reading</p>
+            <a href="#/what-makes-two-people-compatible">What Actually Makes Two People Compatible?</a><br />
+            <a href="#/">Back to the love calculator</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================= ARTICLE 5: FLAGS ============================= -->
+      <div class="page" id="page-flags" data-route="red-flags-vs-green-flags">
+        <div class="article-head prose">
+          <h1>Red Flags vs Green Flags in a New Relationship</h1>
+          <p class="standfirst">Early dating is a season of small evidence. Here is how to read it — the behaviours that genuinely predict trouble, the ones that quietly predict safety, and how to tell a real flag from an ordinary human flaw.</p>
+        </div>
+        <div class="article-body prose">
+          <p>A <a href="#/">love calculator</a> will give you a verdict on a new relationship in five seconds, based on nothing but spelling. Real evidence takes longer, but it starts accumulating from the very first dates — in how someone treats a waiter, answers a difficult question, or reacts when you say no to something small. Learning to read that evidence calmly, without either paranoia or wishful thinking, is one of the most useful skills in dating. This guide lays the warning signs and the reassuring signs side by side.</p>
+
+          <h2>Red flags worth taking seriously</h2>
+          <p>A red flag is not a quirk you dislike. It is a behaviour that predicts harm, dishonesty, or misery if it continues — and the key word is <em>behaviour</em>. One awkward evening is data; a repeated pattern is a flag.</p>
+          <ul class="flag-list red">
+            <li><strong>Contempt for others.</strong> Rudeness to staff, mockery of exes, casual cruelty in jokes. How someone treats people they don't need is how they will eventually treat you.</li>
+            <li><strong>Love bombing followed by coldness.</strong> Overwhelming affection, gifts and declarations in the first days, then sudden distance when you don't respond exactly as hoped. Intensity that arrives too fast is often about control, not love.</li>
+            <li><strong>Your "no" gets negotiated.</strong> You decline a drink, a plan, a pace — and it becomes an argument, a sulk, or a joke at your expense. Disrespect for small boundaries predicts disrespect for large ones.</li>
+            <li><strong>Stories that don't add up.</strong> Small contradictions, vagueness about basic facts, anger when asked ordinary questions. You are not interrogating; you are noticing.</li>
+            <li><strong>Everyone else is always the problem.</strong> Every ex was "crazy," every boss unfair, every friend a traitor. One difficult ex is life. A universal pattern has a common denominator.</li>
+            <li><strong>Jealousy dressed as devotion.</strong> Checking your phone, dictating your friendships, needing constant location updates early on. Control introduced as romance is still control.</li>
+            <li><strong>They punish with silence or rage.</strong> Disagreement met with days of freezing out, shouting, or breaking things is not "passion." It is a preview.</li>
+            <li><strong>Pressure to commit at unnatural speed.</strong> Moving in, merging money, or cutting off your support network within weeks — urgency that isolates you is a classic warning sign.</li>
+          </ul>
+
+          <h2>Green flags worth appreciating</h2>
+          <p>Green flags get less attention because they are quieter. Nobody screenshots "he was kind to the taxi driver." But these are the behaviours that, repeated over years, become a good relationship — the real substance behind what we call <a href="#/what-makes-two-people-compatible">compatibility</a>.</p>
+          <ul class="flag-list green">
+            <li><strong>Consistency between words and actions.</strong> They call when they said they would. Their stories stay the same. Reliability sounds unromantic until you have lived without it.</li>
+            <li><strong>Curiosity about your inner life.</strong> Real questions about your work, your family, your opinions — and they remember the answers next week.</li>
+            <li><strong>They can hear "no" gracefully.</strong> Disappointment without punishment. This single behaviour predicts safety better than almost any other.</li>
+            <li><strong>Accountability without theatrics.</strong> "You're right, I handled that badly — sorry." Said plainly, without excuses or a counter-accusation. Rare, and gold.</li>
+            <li><strong>Respect for your other relationships.</strong> They encourage your friendships and family ties rather than competing with them. Secure people are not threatened by your support network.</li>
+            <li><strong>Kindness under inconvenience.</strong> Delayed trains, lost reservations, bad days — watch the behaviour when nothing is going right. That is the unedited person.</li>
+            <li><strong>They celebrate your wins.</strong> Your promotion, your exam result, your small victories met with genuine pleasure rather than deflection or one-upmanship.</li>
+            <li><strong>Comfortable honesty about hard things.</strong> Past relationships, mistakes, fears — discussed with appropriate openness rather than mystery or oversharing designed to test you.</li>
+          </ul>
+
+          <h2>Flags, flaws, and false alarms</h2>
+          <p>Not everything that irritates you is a red flag. Nervousness on early dates produces awkwardness, oversharing, and jokes that miss — in perfectly decent people. Different texting habits, different tastes, different energy levels are incompatibilities at most, and often just differences. The distinction that matters is direction: a flaw is a static imperfection in someone who treats you well; a red flag is a pattern of behaviour that harms, controls, or deceives. Judge patterns over time, weight how someone responds when you raise a concern — defensiveness and mockery are themselves evidence — and trust the observations of friends who know you, because attraction is a famously unreliable narrator.</p>
+          <p>It also helps to know your own patterns. Many people repeatedly overlook the same flag because it feels familiar, or repeatedly flee from green flags because calm feels boring after chaos. If every relationship ends the same way, the common denominator deserves honest examination too — ideally with the kind of direct questions we collected in <a href="#/21-questions-before-you-commit">21 questions to ask before you commit</a>.</p>
+
+          <h2>The bottom line</h2>
+          <p>No checklist can date for you, and no flag — red or green — should be read from a single evening. But evidence beats vibes, and vibes beat percentages. Watch what a person repeatedly does, especially when it costs them something, and you will know more about your future together than any calculator, chart, or daisy could ever claim to tell you.</p>
+
+          <div class="next-read">
+            <p>Keep reading</p>
+            <a href="#/what-makes-two-people-compatible">What Actually Makes Two People Compatible?</a><br />
+            <a href="#/">Back to the love calculator</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================= ABOUT ============================= -->
+      <div class="page" id="page-about" data-route="about">
+        <div class="article-head prose">
+          <h1>About LoveCalcHub</h1>
+          <p class="standfirst">A small, honest entertainment site built around a very old game.</p>
+        </div>
+        <div class="article-body prose">
+          <p>LoveCalcHub is built around one of the internet's oldest amusements: type in two names, receive a compatibility percentage. People have been playing versions of this game for centuries — with daisy petals, folded paper, and the FLAMES counting game — and we think it has survived this long because it does something genuinely pleasant: it turns a shy, hopeful question into a shared joke.</p>
+          <p>We built this site with two commitments. The first is fairness to the game itself. Our calculator is deterministic: it turns your two names into a number using a fixed formula, so the same names always produce the same result. We do not quietly randomise scores to manufacture drama, and we explain the method openly in <a href="#/how-love-calculators-work">how love calculators work</a>.</p>
+          <p>The second commitment is honesty about the limits. A name calculator cannot measure feelings or predict anything, and we say so on the tool itself, not just in the small print. Around the game, we publish original, carefully written guides about the things that actually do matter in relationships — <a href="#/what-makes-two-people-compatible">what compatibility really depends on</a>, <a href="#/21-questions-before-you-commit">the questions worth asking before committing</a>, and <a href="#/red-flags-vs-green-flags">the early signs worth paying attention to</a>. The game is the invitation; the guides are the substance.</p>
+          <p>Everything on LoveCalcHub is written for this site. The calculator runs entirely in your browser — the names you enter are never sent to a server or stored anywhere. If you have a question, a correction, or a suggestion for a future guide, we would genuinely like to hear it via our <a href="#/contact">contact page</a>.</p>
+          <p>Enjoy the percentage. Then go and have the conversation — that is where the real answer has always lived.</p>
+        </div>
+      </div>
+
+      <!-- ============================= FAQ ============================= -->
+      <div class="page" id="page-faq" data-route="faq">
+        <div class="article-head prose">
+          <h1>Frequently Asked Questions</h1>
+          <p class="standfirst">Straight answers about how the calculator works and what its results do — and do not — mean.</p>
+        </div>
+        <div class="article-body prose">
+          <div class="faq-item">
+            <h3>Is the love calculator accurate?</h3>
+            <p>No — and no love calculator is. It is a game that converts two names into a number with a fixed mathematical formula. It cannot measure feelings, chemistry, or the future of a relationship, and it is not a prediction of any kind. We label it as entertainment because that is exactly what it is.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Why do I get the same result every time?</h3>
+            <p>Because our calculator is deterministic. The two names are combined and run through a hash function — the same input always produces the same output. Some other sites randomise their scores, which is why their results change between visits. We explain the different methods in <a href="#/how-love-calculators-work">how love calculators work (and why results differ)</a>.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Does it matter which name I enter first?</h3>
+            <p>No. We sort the two names before calculating, so "Alex and Sam" and "Sam and Alex" always give the identical percentage and message.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Why did my score change when I used a nickname?</h3>
+            <p>Because the formula works on the letters you type. A nickname is a different string of letters, so it produces a different number — the same reason "Kate" and "Katie" can score differently with the same partner. It says nothing about the person; it is simply how name-based games behave.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is the FLAMES game?</h3>
+            <p>FLAMES is a classic pencil-and-paper compatibility game: shared letters are cancelled out of two names, and the remaining letters are counted off against the word FLAMES — Friends, Love, Affection, Marriage, Enemies, Siblings — until one letter remains. You can play it on this site and read its story in <a href="#/history-of-love-calculators">the history of the love calculator</a>.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Are the names I enter stored or shared?</h3>
+            <p>No. The calculation happens entirely in your own browser. The names never leave your device, are not sent to any server, and are not stored. See our <a href="#/privacy">privacy policy</a> for the full picture.</p>
+          </div>
+          <div class="faq-item">
+            <h3>We got a low score. Should we worry?</h3>
+            <p>Not even slightly. A low score means the letters of your names hashed to a low number — nothing more. Real compatibility depends on communication, shared values, and effort, as we discuss in <a href="#/what-makes-two-people-compatible">what actually makes two people compatible</a>. Plenty of wonderful couples would score terribly in a spelling game.</p>
+          </div>
+          <div class="faq-item">
+            <h3>We got 100%. Are we soulmates?</h3>
+            <p>Congratulations on the rarest roll of the dice — enjoy it, screenshot it, send it to your friends. Then keep doing the things that actually make relationships work. The percentage is a celebration, not a certificate.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I use the calculator for fictional characters or celebrities?</h3>
+            <p>Of course — that is half the fun. The formula treats every pair of names the same way, real or invented.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================= CONTACT ============================= -->
+      <div class="page" id="page-contact" data-route="contact">
+        <div class="article-head prose">
+          <h1>Contact Us</h1>
+          <p class="standfirst">Questions, corrections, and guide suggestions are all welcome.</p>
+        </div>
+        <div class="article-body prose">
+          <p>The fastest way to reach the LoveCalcHub team is by email:</p>
+          <p><strong>Email:</strong> <a href="mailto:contact@lovecalchub.com">contact@lovecalchub.com</a></p>
+          <p>We read everything that arrives. The kinds of messages we most appreciate are corrections to our guides, suggestions for new topics you would like covered, and reports of anything on the site that is not working properly — a broken link, a calculator result that behaves oddly, or text that is unclear.</p>
+          <p>A few honest notes about replies. LoveCalcHub is a small site, so please allow a few working days for a response. We cannot offer personal relationship advice — for anything serious or urgent in your own life, a qualified counsellor in your area is the right person, and they will help you far better than an entertainment website ever could. And if you are writing to ask whether your calculator score means you should propose: it does not, either way. That decision deserves the conversations in our <a href="#/21-questions-before-you-commit">21 questions guide</a>, not a percentage.</p>
+          <p>For questions about how this site handles information, please see our <a href="#/privacy">privacy policy</a> and <a href="#/terms">terms of use</a>.</p>
+        </div>
+      </div>
+
+      <!-- ============================= PRIVACY ============================= -->
+      <div class="page" id="page-privacy" data-route="privacy">
+        <div class="article-head prose">
+          <h1>Privacy Policy</h1>
+          <p class="standfirst">Last updated: November 2026. Short version: the calculator runs in your browser, and we do not collect the names you enter.</p>
+        </div>
+        <div class="article-body prose">
+          <h2>Information the calculator uses</h2>
+          <p>The love calculator and the FLAMES game on LoveCalcHub run entirely on your own device, in your web browser. The names you type are processed locally by the page's code and are never transmitted to us or to any third party, never stored, and never logged. When you close the page, they are gone.</p>
+          <h2>Information we collect</h2>
+          <p>We do not operate user accounts, and we do not ask visitors for personal information to use the calculator or read our guides. If you email us, we will receive your email address and the contents of your message, and we will use them only to reply to you.</p>
+          <h2>Cookies and analytics</h2>
+          <p>Like most websites, LoveCalcHub may use privacy-respecting analytics to understand which pages are popular so we can improve them, and the site may display advertising in the future, which can involve cookies set by advertising partners. You can block or clear cookies at any time through your browser settings; the calculator and all articles will continue to work without them.</p>
+          <h2>Third-party links</h2>
+          <p>Our pages may link to other websites for reference. We are not responsible for the privacy practices of sites we do not operate, and we encourage you to read their policies.</p>
+          <h2>Children's privacy</h2>
+          <p>LoveCalcHub is a general-audience entertainment site and does not knowingly collect information from children.</p>
+          <h2>Changes to this policy</h2>
+          <p>If we change this policy, we will update this page and the date above. Continued use of the site after a change means you accept the updated policy.</p>
+          <h2>Contact</h2>
+          <p>Questions about privacy can be sent via our <a href="#/contact">contact page</a>.</p>
+        </div>
+      </div>
+
+      <!-- ============================= TERMS ============================= -->
+      <div class="page" id="page-terms" data-route="terms">
+        <div class="article-head prose">
+          <h1>Terms of Use</h1>
+          <p class="standfirst">Last updated: November 2026. By using LoveCalcHub you agree to the following terms.</p>
+        </div>
+        <div class="article-body prose">
+          <h2>Entertainment purposes only</h2>
+          <p>The love calculator, the FLAMES game, and all compatibility percentages and messages on LoveCalcHub are provided purely for entertainment. They are generated by simple mathematical formulas applied to the text you enter. They are not predictions, assessments, or advice, and they must not be relied upon for any personal, romantic, financial, or other decision.</p>
+          <h2>Content</h2>
+          <p>The articles on this site are original works written for LoveCalcHub and are provided for general information and enjoyment. Relationship guidance in our guides reflects general, widely accepted principles; it is not a substitute for professional counselling or advice tailored to your situation.</p>
+          <h2>Acceptable use</h2>
+          <p>You agree to use this site lawfully and not to attempt to disrupt it, misrepresent its results as genuine predictions, or use its content or branding in a way that implies endorsement where none exists.</p>
+          <h2>Intellectual property</h2>
+          <p>The text, design, and branding of LoveCalcHub belong to the site's operators unless otherwise stated. You may share links to our pages freely. Short quotations with attribution and a link are welcome; wholesale copying of articles is not.</p>
+          <h2>No warranties</h2>
+          <p>The site is provided "as is" without warranties of any kind. We work to keep the calculator and content accurate and available, but we do not guarantee uninterrupted access or that every result will display identically across all devices and browsers.</p>
+          <h2>Limitation of liability</h2>
+          <p>To the extent permitted by law, LoveCalcHub is not liable for any loss or disappointment arising from the use of this site — including, with feeling, any romantic decision made on the basis of a compatibility percentage.</p>
+          <h2>Changes</h2>
+          <p>We may update these terms from time to time; the current version will always be the one published on this page. Questions about these terms can be sent via our <a href="#/contact">contact page</a>.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <h3>Guides</h3>
+            <ul>
+              <li><a href="#/history-of-love-calculators">History of the Love Calculator &amp; FLAMES</a></li>
+              <li><a href="#/how-love-calculators-work">How Love Calculators Work</a></li>
+              <li><a href="#/what-makes-two-people-compatible">What Makes Two People Compatible?</a></li>
+              <li><a href="#/21-questions-before-you-commit">21 Questions Before You Commit</a></li>
+              <li><a href="#/red-flags-vs-green-flags">Red Flags vs Green Flags</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>LoveCalcHub</h3>
+            <ul>
+              <li><a href="#/">Love Calculator</a></li>
+              <li><a href="#/about">About</a></li>
+              <li><a href="#/faq">FAQ</a></li>
+              <li><a href="#/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="#/privacy">Privacy Policy</a></li>
+              <li><a href="#/terms">Terms of Use</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-note">© 2026 LoveCalcHub. The love calculator is an entertainment tool: percentages are produced by a fixed formula from the names entered and are not predictions or relationship advice. Names are calculated in your browser and are never sent to a server.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ---------- Hash router ---------- */
+        var pages = {};
+        document.querySelectorAll(".page").forEach(function (p) {
+          pages[p.getAttribute("data-route")] = p;
+        });
+        var navMap = {
+          "": "home",
+          "history-of-love-calculators": "guides",
+          "how-love-calculators-work": "guides",
+          "what-makes-two-people-compatible": "guides",
+          "21-questions-before-you-commit": "guides",
+          "red-flags-vs-green-flags": "guides",
+          "about": "about",
+          "faq": "faq",
+          "contact": "contact",
+          "privacy": "",
+          "terms": ""
+        };
+        function route() {
+          var hash = window.location.hash.replace(/^#\/?/, "");
+          if (!pages.hasOwnProperty(hash)) hash = "";
+          document.querySelectorAll(".page").forEach(function (p) {
+            p.classList.toggle("current", p.getAttribute("data-route") === hash);
+          });
+          document.querySelectorAll(".main-nav a").forEach(function (a) {
+            a.classList.toggle("active", a.getAttribute("data-nav") === navMap[hash]);
+          });
+          window.scrollTo(0, 0);
+        }
+        window.addEventListener("hashchange", route);
+        route();
+
+        /* ---------- Deterministic love calculator ---------- */
+        function hashString(str) {
+          // FNV-1a style hash with a final avalanche mix: stable across
+          // devices and sessions, so the same names always score the same.
+          var h = 0x811c9dc5;
+          for (var i = 0; i < str.length; i++) {
+            h ^= str.charCodeAt(i);
+            h = Math.imul(h, 0x01000193);
+          }
+          h ^= h >>> 16;
+          h = Math.imul(h, 0x45d9f3b);
+          h ^= h >>> 16;
+          return Math.abs(h);
+        }
+
+        var BANDS = [
+          {
+            max: 20, title: "A Slow-Burn Spark",
+            msgs: [
+              "The letters have spoken, and they say: humble beginnings. Plenty of legendary love stories started with two people barely noticing each other — the score measures spelling, not destiny, so take this one as an invitation to write a better plot.",
+              "A modest number, but modest numbers have launched some magnificent romances. Think of this as the calculator underestimating you — the best position to surprise it from.",
+              "Low score, high potential. The formula only sees your names; it cannot see a single shared laugh, and those count for far more than letters ever will."
+            ]
+          },
+          {
+            max: 40, title: "Friendly Foundations",
+            msgs: [
+              "This is the score of two people who would make excellent friends first — and friendship, inconveniently for romantics, is the base of almost every relationship that actually lasts. A promising place to start.",
+              "Warm, steady, unhurried. The calculator sees companionship energy here: the kind of pairing that grows on people slowly and then refuses to leave.",
+              "Not a fireworks score — a campfire score. Fireworks fade in minutes; campfires keep people warm all night. There is a lot to be said for this band."
+            ]
+          },
+          {
+            max: 60, title: "A Promising Middle",
+            msgs: [
+              "Right in the golden middle: enough spark to be interesting, enough calm to be sustainable. Couples in this band tend to be built on actually enjoying each other's company, which is rarer and better than it sounds.",
+              "A balanced match, says the formula. Balance is deeply underrated in romance — it is what passion turns into when it decides to stay.",
+              "The calculator sees a pairing with room to grow in every direction. Most real relationships live somewhere in this band and are perfectly happy there."
+            ]
+          },
+          {
+            max: 80, title: "Serious Chemistry",
+            msgs: [
+              "Now we are talking. The letters align, the number climbs, and the formula detects what your friends probably noticed weeks ago: this pairing has real energy. Screenshot-worthy, certainly.",
+              "A strong score for a strong pairing. Chemistry this visible usually means the easy part is handled — the conversation, the laughter, the wanting to stay a little longer.",
+              "High compatibility, high expectations. The calculator approves, your group chat approves, and the rest is gloriously up to the two of you."
+            ]
+          },
+          {
+            max: 100, title: "Written in the Stars",
+            msgs: [
+              "An elite score. The names, the letters, the arithmetic — everything conspired to produce this number, and we are not going to argue with it. If the two of you are half as good in person as you are on paper, that is a genuine love story.",
+              "Top band. This is the score people test a hundred pairs hoping to find once. Treasure it, share it, and then go and be as good to each other as the percentage suggests.",
+              "The calculator has outdone itself: a pairing this strong on paper deserves a celebration in person. Some matches just look inevitable — yours is officially one of them."
+            ]
+          }
+        ];
+
+        function bandFor(score, seed) {
+          for (var i = 0; i < BANDS.length; i++) {
+            if (score <= BANDS[i].max) {
+              var b = BANDS[i];
+              return { title: b.title, msg: b.msgs[seed % b.msgs.length] };
+            }
+          }
+          var last = BANDS[BANDS.length - 1];
+          return { title: last.title, msg: last.msgs[seed % last.msgs.length] };
+        }
+
+        var form = document.getElementById("calc-form");
+        var name1El = document.getElementById("name1");
+        var name2El = document.getElementById("name2");
+        var errorEl = document.getElementById("form-error");
+        var resultEl = document.getElementById("result");
+        var pctEl = document.getElementById("pct-num");
+        var ringEl = document.getElementById("ring-fill");
+        var CIRC = 515.2;
+        var animId = null;
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var n1 = name1El.value.trim();
+          var n2 = name2El.value.trim();
+          if (!n1 || !n2) {
+            errorEl.style.display = "block";
+            resultEl.hidden = true;
+            return;
+          }
+          errorEl.style.display = "none";
+
+          var pair = [n1.toLowerCase(), n2.toLowerCase()].sort();
+          var seed = hashString(pair[0] + "\u2665" + pair[1]);
+          var score = seed % 101;
+          var band = bandFor(score, seed >> 3);
+
+          document.getElementById("res-name1").textContent = n1;
+          document.getElementById("res-name2").textContent = n2;
+          document.getElementById("res-band").textContent = band.title;
+          document.getElementById("res-msg").textContent = band.msg;
+          resultEl.hidden = false;
+
+          if (animId) cancelAnimationFrame(animId);
+          if (reduceMotion) {
+            pctEl.textContent = score;
+            ringEl.style.strokeDashoffset = (CIRC * (1 - score / 100)).toFixed(1);
+            return;
+          }
+          var start = null, dur = 1300;
+          function step(ts) {
+            if (!start) start = ts;
+            var t = Math.min((ts - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - t, 3);
+            var current = Math.round(eased * score);
+            pctEl.textContent = current;
+            ringEl.style.strokeDashoffset = (CIRC * (1 - (eased * score) / 100)).toFixed(1);
+            if (t < 1) animId = requestAnimationFrame(step);
+          }
+          pctEl.textContent = 0;
+          ringEl.style.strokeDashoffset = CIRC;
+          animId = requestAnimationFrame(step);
+          resultEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+
+        document.getElementById("again-btn").addEventListener("click", function () {
+          resultEl.hidden = true;
+          name1El.value = "";
+          name2El.value = "";
+          name1El.focus();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        /* ---------- FLAMES game ---------- */
+        var FLAMES = [
+          ["F", "Friends", "The counting lands on F — Friends. Some of the best relationships in the world wear exactly this label."],
+          ["L", "Love", "The counting lands on L — Love. The playground has spoken, and it approves."],
+          ["A", "Affection", "The counting lands on A — Affection. Warm, fond, and quietly promising."],
+          ["M", "Marriage", "The counting lands on M — Marriage. The most dramatic letter in the game — handle with care and confetti."],
+          ["E", "Enemies", "The counting lands on E — Enemies. Every great rivalry in fiction started exactly like this, so the story is at least interesting."],
+          ["S", "Siblings", "The counting lands on S — Siblings. The game's way of saying: family energy, handle accordingly."]
+        ];
+        document.getElementById("flames-btn").addEventListener("click", function () {
+          var a = document.getElementById("flames-name1").value.toLowerCase().replace(/[^a-z]/g, "");
+          var b = document.getElementById("flames-name2").value.toLowerCase().replace(/[^a-z]/g, "");
+          var out = document.getElementById("flames-result");
+          if (!a || !b) {
+            out.style.display = "block";
+            out.textContent = "Please enter both names to play FLAMES.";
+            return;
+          }
+          var aArr = a.split(""), bArr = b.split("");
+          for (var i = 0; i < aArr.length; i++) {
+            var j = bArr.indexOf(aArr[i]);
+            if (j !== -1) { aArr[i] = ""; bArr[j] = ""; }
+          }
+          var count = aArr.join("").length + bArr.join("").length;
+          if (count === 0) count = 6;
+          var letters = FLAMES.slice();
+          var idx = 0;
+          while (letters.length > 1) {
+            idx = (idx + count - 1) % letters.length;
+            letters.splice(idx, 1);
+          }
+          out.style.display = "block";
+          out.innerHTML = "";
+          var word = document.createElement("span");
+          word.className = "flames-word";
+          word.textContent = letters[0][1] + " ";
+          out.appendChild(word);
+          out.appendChild(document.createTextNode("— " + letters[0][2] + " (Remember: it is a counting game, not a prophecy.)"));
+        });
+      })();
+    </script>
+  </body>
+</html>
